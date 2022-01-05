@@ -32,16 +32,19 @@ class App extends React.Component {
       .then(res=> {
         this.setState({
           ...this.state,
+          inputValue:'',
           userData: [...this.state.userData, res.data]
         })
       })
+    var frm = document.getElementById('newNameForm');
+    frm.reset()
   }
 
   render() {
     return (
       <div>
         <h1>GITHUB USERS: POKEMON CARD EDITION</h1>
-        <form>
+        <form id='newNameForm'>
           <label>Add GitHub Username&nbsp;</label>
           <input
             onChange={this.handleChanges}
